@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-hero: 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  --color-accent: #FF6B1A;
+  --color-accent-hover: #ff7d33;
+  --color-accent-glow: rgba(255, 107, 26, 0.35);
+  --color-dark-bg: #080808;
+  --color-dark-surface: #101010;
+  --color-dark-surface-elevated: #161616;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Base custom font utility classes */
+.font-display {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-hero {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Subtle Film Grain */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Cinematic text gradient */
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FFFFFF 20%, #FF8A3D 80%, #FF6B1A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle pulse glow for heartbeat */
+@keyframes heartPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  14% { transform: scale(1.08); opacity: 1; }
+  28% { transform: scale(1); opacity: 0.8; }
+  42% { transform: scale(1.15); opacity: 1; }
+  70% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-heartbeat {
+  animation: heartPulse 1.4s ease-in-out infinite;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B1A;
+}
