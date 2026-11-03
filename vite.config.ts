@@ -6,7 +6,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/bhaskar-vivek-built-by-discipline/',
+    base: '/bhaskar-vivek---built-by-discipline/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
